@@ -19,3 +19,7 @@ Run:
 ```bash
 pnpm dev
 ```
+
+# Ref
+
+[https://pokeapi.co/](https://pokeapi.co/)
