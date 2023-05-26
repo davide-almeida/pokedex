@@ -7,6 +7,7 @@ const app = createApp(App);
 
 const router = vueRouter.createRouter({
   history: vueRouter.createWebHistory(),
+  linkExactActiveClass: "active",
   routes: [
     {
       path: '/',

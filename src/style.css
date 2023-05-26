@@ -74,6 +74,11 @@ nav ul li a:active {
   /* font-weight: bold; */
 }
 
+a.active {
+  color: #69c3e3;
+  /* text-decoration: underline; */
+}
+
 .search-page {
   display: flex;
   flex-direction: column;

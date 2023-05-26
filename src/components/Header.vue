@@ -17,7 +17,7 @@
   export default defineComponent({
     data(): Header {
       return {
-        title: "Pokedex - APP"
+        title: "Pokedex - APP",
       }
     }
   })
