@@ -1,8 +1,8 @@
 <template>
   <section class="search-page">
     <form class="search-form" @submit.prevent="getPokemon">
-      <input type="text" id="search" v-model="pokeName"/>
-      <button type="submit">Buscar</button>
+      <input type="text" id="search" class="search-input" v-model="pokeName"/>
+      <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
     <p v-show="pokeError">Erro ao procurar pokemon =/</p>

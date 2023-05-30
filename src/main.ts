@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import "./style.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
 import App from './App.vue';
 import * as vueRouter from 'vue-router';
 
