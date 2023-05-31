@@ -140,10 +140,29 @@ a.active {
   justify-content: center;
 }
 
-.pokemon-name {
+.pokemon-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
   width: 100%;
   background-color: #cfcfcf;
   border-radius: 5px 5px 0 0;
+}
+
+.poke-icons-card {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.poke-icons-card > .poke-icon {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.poke-name-card {
+  text-align: left;
+  margin-left: 20px;
 }
 
 .pokemon-data {

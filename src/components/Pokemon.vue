@@ -8,8 +8,17 @@
     <p v-show="pokeError">Erro ao procurar pokemon =/</p>
 
     <div v-if="pokeInfo" class="pokemon-card">
-      <div class="pokemon-name">
-        <h2><i :class="['fa-solid', pokeIcons[pokeInfo.types[0].type.name]]"></i> {{ pokeInfo.name }}</h2>
+      <div class="pokemon-header-card">
+        <div class="poke-name-card">
+          <h2>
+            {{ pokeInfo.name.charAt(0).toUpperCase() }}{{ pokeInfo.name.slice(1).toLowerCase() }}
+          </h2>
+        </div>
+        <div class="poke-icons-card">
+          <span class="poke-icon" v-for="item in pokeInfo.types" :key="item.type.name">
+            <i :class="['fa-solid', pokeIcons[item.type.name]]"></i>
+          </span>
+        </div>
       </div>
       <div class="pokemon-data">
         <div class="pokemon-image">
