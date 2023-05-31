@@ -9,12 +9,23 @@ export type PokemonInfo = {
       };
     };
   };
+  types: Array<pokeIcons>;
 };
 
 type Ability = {
   ability: {
     name: string;
   };
+}
+
+type pokeIcons = {
+  type: {
+    name: string;
+  }
+}
+
+export type PokeIcons = {
+  [key: string]: string;
 }
 
 export type Header = {

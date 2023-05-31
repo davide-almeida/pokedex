@@ -9,7 +9,7 @@
 
     <div v-if="pokeInfo" class="pokemon-card">
       <div class="pokemon-name">
-        <h2>{{ pokeInfo.name }}</h2>
+        <h2><i :class="['fa-solid', pokeIcons[pokeInfo.types[0].type.name]]"></i> {{ pokeInfo.name }}</h2>
       </div>
       <div class="pokemon-data">
         <div class="pokemon-image">
@@ -33,13 +33,16 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import type { PokemonInfo } from '../types';
+  import type { PokeIcons } from '../types';
+  import { pokeIcons } from './icons'
 
   export default defineComponent({
-    data(): {pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string} {
+    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, pokeIcons: PokeIcons } {
       return {
         pokeName: "",
         pokeInfo: null,
         pokeError: false,
+        pokeIcons,
       }
     },
     methods: {
@@ -54,6 +57,6 @@
           this.pokeError = true;
         }
       }
-    }
+    },
   });
 </script>
