@@ -12,7 +12,7 @@
   export default defineComponent({
     data(): Footer {
       return {
-        title: "Footer do ruim"
+        title: "Pokedex"
       }
     }
   })
