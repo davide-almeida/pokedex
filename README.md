@@ -20,6 +20,9 @@ Run:
 pnpm dev
 ```
 
+# Screenshot
+![image](https://github.com/davide-almeida/pokedex/assets/85287720/3f154c23-3b29-4e6e-9560-5fd4f97e967e)
+
 # Ref
 
 [https://pokeapi.co/](https://pokeapi.co/)
