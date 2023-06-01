@@ -7,7 +7,7 @@
 
     <p v-show="pokeError">Erro ao procurar pokemon =/</p>
 
-    <div v-if="pokeInfo" class="pokemon-card">
+    <div v-if="pokeInfo" class="pokemon-card" :class="pokeInfo.types[0].type.name">
       <div class="pokemon-header-card">
         <div class="poke-name-card">
           <h2>
@@ -42,8 +42,8 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import type { PokemonInfo } from '../types';
-  import type { PokeIcons } from '../types';
-  import { pokeIcons } from './icons'
+  import type { PokeIcons } from '../utils/icons.ts';
+  import { pokeIcons } from '../utils/icons.ts';
 
   export default defineComponent({
     data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, pokeIcons: PokeIcons } {

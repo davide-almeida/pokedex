@@ -1,3 +1,5 @@
+import type { PokeType } from "./utils/icons";
+
 export type PokemonInfo = {
   name: string;
   // abilities: Array<{ ability: { name: string } }>
@@ -20,12 +22,8 @@ type Ability = {
 
 type pokeIcons = {
   type: {
-    name: string;
+    name: PokeType;
   }
-}
-
-export type PokeIcons = {
-  [key: string]: string;
 }
 
 export type Header = {
