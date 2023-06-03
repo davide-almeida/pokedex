@@ -11,19 +11,17 @@ export type PokemonInfo = {
       };
     };
   };
-  types: Array<pokeIcons>;
+  types: Array<{
+    type: {
+      name: PokeType;
+    }
+  }>;
 };
 
 type Ability = {
   ability: {
     name: string;
   };
-}
-
-type pokeIcons = {
-  type: {
-    name: PokeType;
-  }
 }
 
 export type Header = {

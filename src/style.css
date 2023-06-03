@@ -202,6 +202,17 @@ a.active {
   margin-bottom: 5px;
 }
 
+.error {
+  border: #282a36 solid 1px;
+  border-radius: 5px;
+  width: 500px;
+  background-color: #44475a;
+}
+
+.error > .msg {
+  font-weight: bold;
+}
+
 .footer-line {
   display: flex;
   flex-direction: column;

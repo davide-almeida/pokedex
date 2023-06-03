@@ -19,5 +19,5 @@ export const pokeIcons = {
   steel: "fa-shield-alt",
 } as const;
 
-export type PokeIcons = typeof pokeIcons;
-export type PokeType = keyof PokeIcons;
+export type PokeIconsType = typeof pokeIcons;
+export type PokeType = keyof PokeIconsType;

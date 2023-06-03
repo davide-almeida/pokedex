@@ -5,67 +5,55 @@
       <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
-    <p v-show="pokeError">Erro ao procurar pokemon =/</p>
+    <PokeError
+      v-if="pokeError"
+      :errorMsg="errorMsg"
+    />
 
-    <div v-if="pokeInfo" class="pokemon-card" :class="pokeInfo.types[0].type.name">
-      <div class="pokemon-header-card">
-        <div class="poke-name-card">
-          <h2>
-            {{ pokeInfo.name.charAt(0).toUpperCase() }}{{ pokeInfo.name.slice(1).toLowerCase() }}
-          </h2>
-        </div>
-        <div class="poke-icons-card">
-          <span class="poke-icon" :class="pokeInfo.types[0].type.name + '-color'" v-for="item in pokeInfo.types" :key="item.type.name">
-            <i :class="['fa-solid', pokeIcons[item.type.name]]"></i>
-          </span>
-        </div>
-      </div>
-      <div class="pokemon-data">
-        <div class="pokemon-image">
-          <img :src="pokeInfo.sprites.other.home.front_default" alt="poke img">
-        </div>
-        <div class="pokemon-abilities">
-          <div class="title">
-            <h3>Habilidades</h3>
-          </div>
-          <div class="list">
-            <ul>
-              <li v-for="item in pokeInfo.abilities" :key="item.ability.name">{{ item.ability.name }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PokeCard
+      v-if="pokeInfo"
+      :pokeInfo="pokeInfo"
+    />
   </section>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
   import type { PokemonInfo } from '../types';
-  import type { PokeIcons } from '../utils/icons.ts';
+  import type { PokeIconsType } from '../utils/icons.ts';
   import { pokeIcons } from '../utils/icons.ts';
+  import PokeCard from "./PokeCard.vue";
+  import PokeError from "./PokeError.vue"
 
   export default defineComponent({
-    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, pokeIcons: PokeIcons } {
+    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, pokeIcons: PokeIconsType, errorMsg: string } {
       return {
         pokeName: "",
         pokeInfo: null,
         pokeError: false,
         pokeIcons,
+        errorMsg: "",
       }
     },
     methods: {
       async getPokemon() {
-        try {
-          this.pokeError = false;
-          this.pokeInfo = null;
-          const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.pokeName}`);
+        this.pokeError = false;
+        const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.pokeName}`);
+        if (data.status === 200) {
           const response = await data.json();
           this.pokeInfo = response;
-        } catch (error) {
+        } else if (data.status === 404) {
           this.pokeError = true;
+          this.pokeInfo = null;
+          this.errorMsg = await data.text();
+        } else {
+          console.log("Erro inesperado");
         }
       }
     },
+    components: {
+      PokeCard,
+      PokeError,
+    }
   });
 </script>
