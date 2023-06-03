@@ -15,7 +15,7 @@
           </h2>
         </div>
         <div class="poke-icons-card">
-          <span class="poke-icon" v-for="item in pokeInfo.types" :key="item.type.name">
+          <span class="poke-icon" :class="pokeInfo.types[0].type.name + '-color'" v-for="item in pokeInfo.types" :key="item.type.name">
             <i :class="['fa-solid', pokeIcons[item.type.name]]"></i>
           </span>
         </div>

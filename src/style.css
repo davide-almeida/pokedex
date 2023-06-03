@@ -155,7 +155,7 @@ a.active {
 .poke-icons-card > .poke-icon {
   margin-right: 10px;
   font-size: 1.5em;
-  color: #bd93f9;
+  /* color: #bd93f9; */
 }
 
 .poke-name-card {
@@ -228,75 +228,147 @@ footer {
   color: #44475a;
 }
 
-/* poke colors */
+/* poke icon colors and shadow colors */
 .fire {
   box-shadow: 0px 0px 30px 0px rgba(255, 0, 0, 0.4);
+}
+
+.fire-color {
+  color: rgb(184, 0, 0);
 }
 
 .water {
   box-shadow: 0px 0px 30px 0px rgba(0, 55, 255, 0.4);
 }
 
+.water-color {
+  color: rgb(59, 93, 215);
+}
+
 .grass {
   box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.4);
+}
+
+.grass-color {
+  color: rgb(0, 255, 0);
 }
 
 .electric {
   box-shadow: 0px 0px 30px 0px rgba(255, 255, 0, 0.4);
 }
 
+.electric-color {
+  color: rgba(255, 255, 0);
+}
+
 .psychic {
   box-shadow: 0px 0px 30px 0px rgba(255, 0, 255, 0.4);
+}
+
+.psychic-color {
+  color: rgb(217, 23, 217);
 }
 
 .ice {
   box-shadow: 0px 0px 30px 0px rgba(0, 255, 255, 0.4);
 }
 
+.ice-color {
+  color: rgb(0, 255, 255);
+}
+
 .dragon {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 255, 0.4);
+}
+
+.dragon-color {
+  color: rgb(54, 54, 217);
 }
 
 .dark {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
 }
 
+.dark-color {
+  color: rgb(0, 0, 0);
+}
+
 .fairy {
   box-shadow: 0px 0px 30px 0px rgba(255, 0, 0, 0.4);
+}
+
+.fairy-color {
+  color: rgb(31, 144, 214);
 }
 
 .ghost {
   box-shadow: 0px 0px 30px 0px rgba(164, 124, 238, 0.4);
 }
 
+.ghost-color {
+  color: rgb(164, 124, 238);
+}
+
 .ground {
   box-shadow: 0px 0px 30px 0px rgba(103, 47, 7, 0.92);
+}
+
+.ground-color {
+  color: rgb(140, 70, 20);
 }
 
 .normal {
   box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.4);
 }
 
+.normal-color {
+  color: rgb(220, 220, 220);
+}
+
 .fighting {
   box-shadow: 0px 0px 30px 0px rgba(79, 0, 0, 0.4);
+}
+
+.fighting-color {
+  color: rgb(106, 4, 4);
 }
 
 .flying {
   box-shadow: 0px 0px 30px 0px rgba(0, 195, 255, 0.4);
 }
 
+.flying-color {
+  color: rgb(0, 195, 255);
+}
+
 .bug {
   box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.4);
+}
+
+.bug-color {
+  color: rgb(24, 189, 24);
 }
 
 .poison {
   box-shadow: 0px 0px 30px 0px rgba(255, 0, 255, 0.4);
 }
 
+.poison-color {
+  color: rgb(192, 65, 223);
+}
+
 .rock {
   box-shadow: 0px 0px 30px 0px rgba(91, 91, 91, 0.4);
 }
 
+.rock-color {
+  color: rgb(136, 136, 136);
+}
+
 .steel {
   box-shadow: 0px 0px 30px 0px rgba(54, 54, 54, 0.4);
+}
+
+.steel-color {
+  color: rgb(117, 112, 112);
 }
