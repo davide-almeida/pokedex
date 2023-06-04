@@ -13,11 +13,11 @@ const router = vueRouter.createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('./components/Home.vue')
+      component: () => import('./views/home/Home.vue')
     },
     {
       path: '/busca',
-      component: () => import('./components/PokeSearch.vue')
+      component: () => import('./views/pokeSearch/PokeSearch.vue')
     }
   ]
 });

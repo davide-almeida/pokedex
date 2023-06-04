@@ -9,7 +9,8 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import PokeList from "./PokeList.vue";
+  import PokeList from "../../components/PokeList.vue";
+  import { getPokemons } from "../../services/pokemons.ts";
 
   export default defineComponent({
     data() {
@@ -21,14 +22,15 @@
       PokeList,
     },
     methods: {
-      async getPokemons() {
-        const data = await fetch("https://pokeapi.co/api/v2/pokemon?offset=10&limit=10")
-        const response = await data.json();
-        this.pokeData = response;
+      async listPokemons(limit: number, offset: number) {
+        const data = await getPokemons(limit, offset);
+        this.pokeData = data;
+        // console.log('next', this.pokeData.next);
+        // console.log('previous', this.pokeData.previous);
       }
     },
     created() {
-      this.getPokemons();
+      this.listPokemons(10, 0);
     }
   })
 </script>

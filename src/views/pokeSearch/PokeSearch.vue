@@ -19,9 +19,9 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import type { PokemonInfo } from '../types';
-  import PokeCard from "./PokeCard.vue";
-  import PokeError from "./PokeError.vue"
+  import type { PokemonInfo } from '../../types.ts';
+  import PokeCard from "../../components/PokeCard.vue";
+  import PokeError from "../../components/PokeError.vue"
 
   export default defineComponent({
     data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, errorMsg: string } {
