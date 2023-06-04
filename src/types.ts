@@ -1,6 +1,7 @@
 import type { PokeType } from "./utils/icons";
 
 export type PokemonInfo = {
+  id: number;
   name: string;
   // abilities: Array<{ ability: { name: string } }>
   abilities: Array<Ability>;

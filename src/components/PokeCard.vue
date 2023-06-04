@@ -4,6 +4,7 @@
         <div class="poke-name-card">
           <h2>
             {{ pokeInfo.name.charAt(0).toUpperCase() }}{{ pokeInfo.name.slice(1).toLowerCase() }}
+            <spam class="poke-id"> #{{ pokeInfo.id }}</spam>
           </h2>
         </div>
         <div class="poke-icons-card">

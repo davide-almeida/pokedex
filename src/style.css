@@ -211,6 +211,11 @@ a.active {
   color: #f8f8f2;
 }
 
+.poke-id {
+  color: #44475a;
+  font-size: 13px;
+}
+
 .pokemon-data {
   width: 100%;
   display: flex;
