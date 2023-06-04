@@ -22,7 +22,7 @@
     },
     methods: {
       async getPokemons() {
-        const data = await fetch("https://pokeapi.co/api/v2/pokemon?offset=40&limit=10")
+        const data = await fetch("https://pokeapi.co/api/v2/pokemon?offset=10&limit=10")
         const response = await data.json();
         this.pokeData = response;
       }
