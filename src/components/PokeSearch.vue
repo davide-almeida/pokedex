@@ -20,18 +20,15 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import type { PokemonInfo } from '../types';
-  import type { PokeIconsType } from '../utils/icons.ts';
-  import { pokeIcons } from '../utils/icons.ts';
   import PokeCard from "./PokeCard.vue";
   import PokeError from "./PokeError.vue"
 
   export default defineComponent({
-    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, pokeIcons: PokeIconsType, errorMsg: string } {
+    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, errorMsg: string } {
       return {
         pokeName: "",
         pokeInfo: null,
         pokeError: false,
-        pokeIcons,
         errorMsg: "",
       }
     },

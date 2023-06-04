@@ -32,8 +32,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import type { PokeIconsType } from '../utils/icons.ts';
-import { pokeIcons } from '../utils/icons.ts';
+import { PokeIconsType, pokeIcons } from '../utils/icons.ts';
 import type { PokemonInfo } from '../types';
 
 export default defineComponent({
@@ -45,7 +44,6 @@ export default defineComponent({
     props: {
       pokeInfo: {
         type: Object as () => PokemonInfo,
-        required: true,
       }
     },
   });

@@ -16,8 +16,8 @@ const router = vueRouter.createRouter({
       component: () => import('./components/Home.vue')
     },
     {
-      path: '/pokemon',
-      component: () => import('./components/Pokemon.vue')
+      path: '/busca',
+      component: () => import('./components/PokeSearch.vue')
     }
   ]
 });

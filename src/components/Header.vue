@@ -5,7 +5,7 @@
   <nav>
     <ul>
       <li><router-link to="/"><i class="fa-solid fa-house"></i> Início</router-link></li>
-      <li><router-link to="/pokemon"><i class="fa-solid fa-magnifying-glass"></i> Buscar</router-link></li>
+      <li><router-link to="/busca"><i class="fa-solid fa-magnifying-glass"></i> Buscar</router-link></li>
     </ul>
   </nav>
 </template>

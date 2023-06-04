@@ -24,6 +24,13 @@ type Ability = {
   };
 }
 
+export type pokeDataType = {
+  results: Array<{
+    name: string;
+    url: string;
+  }>;
+}
+
 export type Header = {
   title: string;
 }
