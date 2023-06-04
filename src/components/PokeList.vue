@@ -1,7 +1,7 @@
 <template>
   <section class="poke-list">
     <PokeCard 
-      v-for="(pokemon, index) in pokeData.results"
+      v-for="(pokemon, index) in pokeInfoList"
       :key="pokemon.name"
       :pokeInfo="pokeInfoList[index]"
       class="poke-card"
@@ -13,13 +13,14 @@
   import { defineComponent } from 'vue';
   import PokeCard from "./PokeCard.vue";
   import { PokemonInfo, pokeDataType } from '../types';
+  import { getPokemon } from '../services/pokemons.ts';
+
 
   export default defineComponent({
-    data(): { pokeInfoList: Array<PokemonInfo>, pokeError: boolean, errorMsg: string } {
+    data(): { pokeInfoList: Array<PokemonInfo>, pokeError: boolean } {
       return {
         pokeInfoList: [],
         pokeError: false,
-        errorMsg: "",
       }
     },
     props: {
@@ -31,6 +32,14 @@
     components: {
       PokeCard,
     },
+    watch: {
+      pokeData: {
+        handler() {
+          this.getPokemonData();
+        },
+        deep: true,
+      }
+    },
     mounted() {
       this.getPokemonData();
     },
@@ -41,19 +50,16 @@
         }
       },
       async getPokemon(pokeName: string) {
-        this.pokeError = false;
-        const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
-        if (data.status === 200) {
-          const response = await data.json();
-          this.pokeInfoList.push(response);
-        } else if (data.status === 404) {
+        try {
+          const data = await getPokemon(pokeName);
+          this.pokeInfoList.push(data);
+          this.pokeError = false;
+        } catch (error) {
+          console.log('Erro ao buscar dados da API:', error);
           this.pokeError = true;
           this.pokeInfoList = [];
-          this.errorMsg = await data.text();
-        } else {
-          console.log("Erro inesperado");
         }
-      }
+      },
     },
   });
 </script>
