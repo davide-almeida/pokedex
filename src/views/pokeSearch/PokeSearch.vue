@@ -1,6 +1,6 @@
 <template>
   <section class="search-page">
-    <form class="search-form" @submit.prevent="getPokemon">
+    <form class="search-form" @submit.prevent="getPoke">
       <input type="text" id="search" class="search-input" v-model="pokeName"/>
       <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
@@ -19,6 +19,7 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
+  import { getPokemon } from '../../services/pokemons';
   import type { PokemonInfo } from '../../types';
   import PokeCard from "../../components/PokeCard.vue";
   import PokeError from "../../components/PokeError.vue"
@@ -33,18 +34,19 @@
       }
     },
     methods: {
-      async getPokemon() {
-        this.pokeError = false;
-        const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.pokeName}`);
-        if (data.status === 200) {
-          const response = await data.json();
-          this.pokeInfo = response;
-        } else if (data.status === 404) {
+      async getPoke() {
+        try {
+          this.pokeError = false;
+          const pokemon = await getPokemon(this.pokeName);
+          this.pokeInfo = pokemon;
+        } catch (error) {
           this.pokeError = true;
           this.pokeInfo = null;
-          this.errorMsg = await data.text();
-        } else {
-          console.log("Erro inesperado");
+          if (error instanceof Error) {
+            this.errorMsg = error.message;
+          } else {
+            this.errorMsg = "Ocorreu um erro desconhecido.";
+          }
         }
       }
     },

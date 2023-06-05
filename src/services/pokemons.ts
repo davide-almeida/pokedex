@@ -10,7 +10,6 @@ export const getPokemons = async (apiUrl: string = "https://pokeapi.co/api/v2/po
     const response = await api.get(apiUrl);
     return response.data;
   } catch (error) {
-    console.log('Erro ao buscar dados da API:', error);
     throw error;
   }
 }
@@ -21,7 +20,6 @@ export const getPokemon = async (pokeName: string) => {
     const response = await api.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
     return response.data;
   } catch (error) {
-    console.log('Erro ao buscar dados da API:', error);
     throw error;
   }
 }

@@ -155,6 +155,10 @@ a.active {
   .content {
     padding: 20px 0;
   }
+
+  .error {
+    min-width: calc(100% - 40px);
+  }
 }
 
 /* Search Page */
@@ -170,7 +174,7 @@ a.active {
   max-width: 900px;
   min-width: 400px;
   padding: 20px 0;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .search-form {
@@ -295,7 +299,7 @@ a.active {
 .error {
   border: #282a36 solid 1px;
   border-radius: 5px;
-  width: 500px;
+  width: calc(50% - 42px);
   background-color: #44475a;
 }
 
