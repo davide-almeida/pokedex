@@ -3,6 +3,7 @@
     <form class="search-form" @submit.prevent="getPoke">
       <input type="text" id="search" class="search-input" v-model="pokeName"/>
       <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button @click.prevent="rollDice" class="search-dice-button"><i class="fa-solid fa-dice"></i></button>
     </form>
 
     <PokeError
@@ -48,7 +49,12 @@
             this.errorMsg = "Ocorreu um erro desconhecido.";
           }
         }
-      }
+      },
+      rollDice() {
+        const randomNumber = Math.floor(Math.random() * 1281) + 1;
+        this.pokeName = randomNumber.toString();
+        this.getPoke();
+      },
     },
     components: {
       PokeCard,
