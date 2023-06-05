@@ -59,6 +59,13 @@
     components: {
       PokeCard,
       PokeError,
-    }
+    },
+    created() {
+      // Verificar outra forma de rolar a página para o topo (provavelmente no CSS)
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
   });
 </script>
