@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { PokeIconsType, pokeIcons } from '../utils/icons.ts';
+import { PokeIconsType, pokeIcons } from '../utils/icons';
 import type { PokemonInfo } from '../types';
 
 export default defineComponent({

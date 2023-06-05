@@ -19,7 +19,7 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import type { PokemonInfo } from '../../types.ts';
+  import type { PokemonInfo } from '../../types';
   import PokeCard from "../../components/PokeCard.vue";
   import PokeError from "../../components/PokeError.vue"
 

@@ -13,7 +13,7 @@
   import { defineComponent } from 'vue';
   import PokeCard from "./PokeCard.vue";
   import { PokemonInfo, pokeDataType } from '../types';
-  import { getPokemon } from '../services/pokemons.ts';
+  import { getPokemon } from '../services/pokemons';
 
 
   export default defineComponent({
