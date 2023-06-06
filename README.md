@@ -21,7 +21,9 @@ pnpm dev
 ```
 
 # Screenshot
-![image](https://github.com/davide-almeida/pokedex/assets/85287720/3f154c23-3b29-4e6e-9560-5fd4f97e967e)
+![image](https://github.com/davide-almeida/pokedex/assets/85287720/27d766b6-83e0-43a4-8fad-b5a253e30711)
+
+![image](https://github.com/davide-almeida/pokedex/assets/85287720/8480bb7f-2b3a-430b-92fe-59a8b214472c)
 
 # Ref
 
