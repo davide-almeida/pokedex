@@ -51,7 +51,7 @@
         }
       },
       rollDice() {
-        const randomNumber = Math.floor(Math.random() * 1281) + 1;
+        const randomNumber = Math.floor(Math.random() * 1010) + 1;
         this.pokeName = randomNumber.toString();
         this.getPoke();
       },
