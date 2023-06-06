@@ -11,6 +11,8 @@
       :errorMsg="errorMsg"
     />
 
+    <div v-if="isLoading" class="loading"><img src="../../assets/loading.gif" alt="loading" /></div>
+
     <PokeCard
       v-if="pokeInfo"
       :pokeInfo="pokeInfo"
@@ -26,20 +28,24 @@
   import PokeError from "../../components/PokeError.vue"
 
   export default defineComponent({
-    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, errorMsg: string } {
+    data(): { pokeInfo: PokemonInfo | null, pokeError: boolean, pokeName: string, errorMsg: string, isLoading: boolean } {
       return {
         pokeName: "",
         pokeInfo: null,
         pokeError: false,
         errorMsg: "",
+        isLoading: false,
       }
     },
     methods: {
       async getPoke() {
         try {
+          this.pokeInfo = null;
+          this.isLoading = true;
           this.pokeError = false;
           const pokemon = await getPokemon(this.pokeName);
           this.pokeInfo = pokemon;
+          this.isLoading = false;
         } catch (error) {
           this.pokeError = true;
           this.pokeInfo = null;
