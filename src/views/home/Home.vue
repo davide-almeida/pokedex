@@ -1,5 +1,6 @@
 <template>
   <section class="content">
+    <PokeFilter />
     <PokeList
       v-if="pokeData"
       :pokeData="pokeData"
@@ -16,6 +17,7 @@
   import PokeList from "../../components/PokeList.vue";
   import { getPokemons } from "../../services/pokemons";
   import ScrollTopButton from '../../components/ScrollTopButton.vue';
+  import PokeFilter from '../../components/PokeFilter.vue';
 
   export default defineComponent({
     data(): { pokeData: pokeDataType | null, isLoading: boolean, apiUrl: string} {
@@ -28,6 +30,7 @@
     components: {
       PokeList,
       ScrollTopButton,
+      PokeFilter,
     },
     methods: {
       async listPokemons() {
